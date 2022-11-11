@@ -3,12 +3,12 @@ import { BiSearch } from 'react-icons/bi';
 
 export default function SearchInput() {
   return (
-    <form className="relative w-4/5 z-50 mx-auto">
+    <form className="relative w-4/5 mx-auto">
       <input
-        className="w-full p-4 rounded-3xl border-0 bg-gray-100 outline-none"
+        className="w-full py-2 px-4 rounded-3xl border-0 bg-gray-100 outline-none"
         type="text"
       />
-      <button className="absolute right-4 top-5 text-zinc-600">
+      <button className="absolute right-4 top-3 text-zinc-600">
         <BiSearch />
       </button>
     </form>

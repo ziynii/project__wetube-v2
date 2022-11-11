@@ -9,7 +9,7 @@ import SearchInput from './SearchInput';
 
 export default function Header() {
   return (
-    <header className="relative flex items-center py-5 px-5 justify-between border-b border-gray-200 md:px-16">
+    <header className="fixed w-full flex items-center py-5 px-5 justify-between bg-white border-b border-gray-200 z-50 lg:px-16">
       <div className="basis-4/5 md:basis-1/5 flex">
         <button className="w-6 text-2xl mr-4 text-zinc-600">
           <HiBars3CenterLeft />
