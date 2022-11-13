@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import FakeYoutube from '../api/mockYoutube';
 import { IVideo } from '../interface';
 import { formatAgo } from '../util/date';
 import { useNavigate } from 'react-router-dom';
+import Youtube from '../api/youtube';
 
 interface IVideoCardProps {
   video: IVideo;
@@ -13,11 +13,9 @@ interface IVideoCardProps {
 export default function VideoCard({ video, type }: IVideoCardProps) {
   const { thumbnails, title, channelTitle, channelId, publishedAt } =
     video.snippet;
-  const youtube = new FakeYoutube();
+  const youtube = new Youtube();
   const { data: channelImage } = useQuery(['channel', channelId], () =>
-    youtube
-      .channels()
-      .then((res) => res.data.items[0].snippet.thumbnails.default.url)
+    youtube.channelImage(channelId)
   );
   const navigate = useNavigate();
   const isRelated = type === 'related';
