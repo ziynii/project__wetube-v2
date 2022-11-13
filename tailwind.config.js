@@ -14,9 +14,18 @@ module.exports = {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
+        cursor: {
+          '0%': {
+            'box-shadow': 'inset -3px 0px 0px #888',
+          },
+          '100%': {
+            'box-shadow': 'inset -3px 0px 0px transparent',
+          },
+        },
       },
       animation: {
         loading: 'loading 1.6s linear infinite',
+        cursor: 'cursor 0.5s alternate infinite',
       },
       animationDelay: {
         48: '0.48s',
