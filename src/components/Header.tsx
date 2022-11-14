@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../image/logo.png';
 import { HiBars3CenterLeft } from 'react-icons/hi2';
@@ -7,13 +7,19 @@ import { BiSearch } from 'react-icons/bi';
 import { VscBell } from 'react-icons/vsc';
 import { BiX } from 'react-icons/bi';
 import SearchInput from './SearchInput';
+import { OpenSideNavContext } from '../context/OpenSideNavContext';
 
 export default function Header() {
   const [openSearch, setOpenSearch] = useState(false);
+  const { toggleSideNav } = useContext(OpenSideNavContext);
+
   return (
     <header className="fixed w-full flex items-center py-5 px-5 justify-between bg-white border-b border-gray-200 z-50 lg:px-16">
       <div className="basis-4/5 md:basis-1/5 flex">
-        <button className="w-6 text-2xl mr-4 text-zinc-600">
+        <button
+          className="w-6 text-2xl mr-4 text-zinc-600"
+          onClick={() => toggleSideNav()}
+        >
           <HiBars3CenterLeft />
         </button>
         <Link to="/">
