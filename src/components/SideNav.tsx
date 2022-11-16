@@ -11,7 +11,7 @@ export default function SideNav() {
   return (
     <>
       {openSideNav && (
-        <aside className="fixed top-0 left-0 z-40 w-64 h-full py-5 px-12 bg-white border-r-2 border-gray-200 text-gray-500">
+        <aside className="fixed top-0 left-0 z-40 w-64 h-full py-5 px-12 bg-white dark:bg-slate-800 border-r-2 border-gray-200 dark:border-gray-600 text-gray-500 dark:text-gray-200">
           <ul className="text-lg pt-28 mb-10">
             <h3 className="text-base mb-4">MENU</h3>
             <li className="cursor-pointer flex items-center mb-2">

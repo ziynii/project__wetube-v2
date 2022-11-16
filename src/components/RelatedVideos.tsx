@@ -10,7 +10,6 @@ interface IRelatedVideosProps {
 
 export default function RelatedVideos({ id }: IRelatedVideosProps) {
   const youtube = new Youtube();
-
   const {
     isLoading,
     error,
@@ -18,7 +17,6 @@ export default function RelatedVideos({ id }: IRelatedVideosProps) {
   } = useQuery(['related', id], () => youtube.relatedVideos(id), {
     staleTime: 1000 * 60 * 5,
   });
-
   return (
     <>
       {isLoading && <p>Loading...</p>}

@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../image/logo.png';
 import { HiBars3CenterLeft } from 'react-icons/hi2';
 import { IoPersonCircle } from 'react-icons/io5';
 import { BiSearch } from 'react-icons/bi';
 import { VscBell } from 'react-icons/vsc';
 import { BiX } from 'react-icons/bi';
+import { SiYoutube } from 'react-icons/si';
 import SearchInput from './SearchInput';
 import { OpenSideNavContext } from '../context/OpenSideNavContext';
 
@@ -14,25 +14,21 @@ export default function Header() {
   const { toggleSideNav } = useContext(OpenSideNavContext);
 
   return (
-    <header className="fixed w-full flex items-center py-5 px-5 justify-between bg-white border-b border-gray-200 z-50 lg:px-16">
+    <header className="fixed w-full flex items-center py-5 px-5 justify-between bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-600 z-50 lg:px-16">
       <div className="basis-4/5 md:basis-1/5 flex">
         <button
-          className="w-6 text-2xl mr-4 text-zinc-600"
+          className="w-6 text-2xl mr-4 text-zinc-600 dark:text-white"
           onClick={() => toggleSideNav()}
         >
           <HiBars3CenterLeft />
         </button>
         <Link to="/">
-          <img
-            className="absolute w-1/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden"
-            src={logo}
-            alt="wetube 로고"
-          />
-          <img
-            className="hidden md:inline-block w-28"
-            src={logo}
-            alt="wetube 로고"
-          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:relative md:w-28">
+            <h1 className="flex items-center font-mono font-bold text-2xl dark:text-white">
+              <SiYoutube className="inline-block mr-2 text-brand" />
+              WETUBE
+            </h1>
+          </div>
         </Link>
       </div>
 
@@ -41,7 +37,7 @@ export default function Header() {
       </div>
 
       {openSearch && (
-        <div className="flex items-center absolute  w-full bg-white">
+        <div className="flex items-center absolute  w-full bg-white dark:bg-slate-800">
           <button
             className="text-2xl text-zinc-600"
             onClick={() => setOpenSearch(false)}
@@ -53,7 +49,7 @@ export default function Header() {
       )}
 
       <div className="basis-1/5 flex justify-end">
-        <div className="hidden items-center text-2xl text-zinc-600 md:flex">
+        <div className="hidden items-center text-2xl text-zinc-600 dark:text-white md:flex">
           <button className="mr-3">
             <VscBell />
           </button>
@@ -65,7 +61,7 @@ export default function Header() {
           Login
         </button>
         <button
-          className="text-2xl text-zinc-600 md:hidden"
+          className="text-2xl text-zinc-600 dark:text-white md:hidden"
           onClick={() => setOpenSearch(true)}
         >
           <BiSearch />

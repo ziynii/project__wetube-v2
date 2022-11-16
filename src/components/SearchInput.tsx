@@ -17,7 +17,7 @@ export default function SearchInput() {
   return (
     <form className="relative w-4/5 mx-auto" onSubmit={handleSubmit}>
       <input
-        className="w-full py-2 px-4 rounded-3xl border-0 bg-gray-100 outline-none"
+        className="w-full py-2 px-4 rounded-3xl border-0 bg-gray-100 dark:bg-gray-600 dark:text-white outline-none"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}

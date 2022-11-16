@@ -1,11 +1,13 @@
 import { createContext, useState } from 'react';
 
-type State = {
+type SideNavState = {
   openSideNav: boolean;
   toggleSideNav: () => void;
 };
 
-export const OpenSideNavContext = createContext<State>({} as State);
+export const OpenSideNavContext = createContext<SideNavState>(
+  {} as SideNavState
+);
 
 export function OpenSideNavProvider({
   children,

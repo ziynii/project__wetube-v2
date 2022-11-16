@@ -17,10 +17,10 @@ export default function ChannelInfo({ video }: IChannelInfoProps) {
     <div className="flex items-center mb-4">
       <img
         className="w-12 mr-2 rounded-full"
-        src={channelImage}
+			src={channelImage}
         alt={channelTitle}
       />
-      <p>{channelTitle}</p>
+      <p className="dark:text-white">{channelTitle}</p>
     </div>
   );
 }
