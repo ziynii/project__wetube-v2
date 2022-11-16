@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { HiBars3CenterLeft } from 'react-icons/hi2';
+import { CgMenuLeftAlt } from 'react-icons/cg';
 import { IoPersonCircle } from 'react-icons/io5';
 import { BiSearch } from 'react-icons/bi';
 import { VscBell } from 'react-icons/vsc';
@@ -20,7 +20,7 @@ export default function Header() {
           className="w-6 text-2xl mr-4 text-zinc-600 dark:text-white"
           onClick={() => toggleSideNav()}
         >
-          <HiBars3CenterLeft />
+          <CgMenuLeftAlt />
         </button>
         <Link to="/">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:relative md:w-28">
@@ -39,7 +39,7 @@ export default function Header() {
       {openSearch && (
         <div className="flex items-center absolute  w-full bg-white dark:bg-slate-800">
           <button
-            className="text-2xl text-zinc-600"
+            className="text-2xl text-zinc-600 dark:text-white"
             onClick={() => setOpenSearch(false)}
           >
             <BiX />
