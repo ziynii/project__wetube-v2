@@ -6,6 +6,7 @@ import Loading from '../components/Loading';
 import VideoCard from '../components/VideoCard';
 import { OpenSideNavContext } from '../context/OpenSideNavContext';
 import { IVideo } from '../interface';
+import { registTitle } from '../util/helmet';
 
 export default function Videos() {
   const youtube = new Youtube();
@@ -23,6 +24,7 @@ export default function Videos() {
 
   return (
     <section className="overflow-hidden lg:flex lg:justify-end dark:bg-slate-800 dark:text-white">
+      {registTitle(keyword ? `'${keyword}'의 검색결과` : '')}
       {isLoading && <Loading />}
       {videos && (
         <ul
