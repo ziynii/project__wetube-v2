@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         brand: '#FF0000',
       },
+      width: { isSideNav: 'calc(100% - 16rem)' },
       padding: {
         56: '56.25%',
       },
