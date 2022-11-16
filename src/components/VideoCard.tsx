@@ -4,7 +4,7 @@ import { IVideo } from '../interface';
 import { formatAgo } from '../util/date';
 import { useNavigate } from 'react-router-dom';
 import Youtube from '../api/youtube';
-const he = require('he');
+import { decodeTitle } from '../util/decode';
 
 interface IVideoCardProps {
   video: IVideo;
@@ -46,7 +46,7 @@ export default function VideoCard({ video, type }: IVideoCardProps) {
         />
         <div>
           <h6 className="overflow-hidden line-clamp-2 lg:text-sm dark:text-white">
-            {he.decode(title)}
+            {decodeTitle(title)}
           </h6>
           <p className="text-xs mt-1 text-gray-600 dark:text-gray-400">
             {channelTitle} &middot; {formatAgo(publishedAt, 'ko')}

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { formatAgo } from '../util/date';
 import ChannelInfo from '../components/ChannelInfo';
 import RelatedVideos from '../components/RelatedVideos';
+import { decodeTitle } from '../util/decode';
 
 export default function VideoDetail() {
   const {
@@ -27,7 +28,7 @@ export default function VideoDetail() {
         <p className="text-xs mt-2 text-blue-400">
           {tags && tags.slice(0, 3).map((tag: string) => `#${tag} `)}
         </p>
-        <h4 className="font-bold mb-4 dark:text-white">{title}</h4>
+        <h4 className="font-bold mb-4 dark:text-white">{decodeTitle(title)}</h4>
 
         <ChannelInfo video={video} />
 
