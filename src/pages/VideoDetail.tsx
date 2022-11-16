@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { formatAgo } from '../util/date';
 import ChannelInfo from '../components/ChannelInfo';
 import RelatedVideos from '../components/RelatedVideos';
 import { decodeTitle } from '../util/decode';
 import { registTitle } from '../util/helmet';
+import { OpenSideNavContext } from '../context/OpenSideNavContext';
 
 export default function VideoDetail() {
   const {
@@ -12,9 +13,15 @@ export default function VideoDetail() {
   } = useLocation();
   const { title, publishedAt, tags, description } = video.snippet;
   const formatTitle = decodeTitle(title);
+  const { openSideNav } = useContext(OpenSideNavContext);
 
   return (
-    <section className="overflow-hidden dark:bg-slate-800 flex flex-col lg:flex-row  p-5">
+    <section
+      className={
+        'overflow-hidden dark:bg-slate-800 flex flex-col lg:flex-row p-5 lg:px-16 ' +
+        (openSideNav ? 'lg:pl-72' : '')
+      }
+    >
       {registTitle(formatTitle)}
       <div className="basis-4/6 lg:mr-2">
         <div className="relative w-full pb-56 z-10 mt-14 md:mt-24">
