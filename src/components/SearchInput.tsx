@@ -22,7 +22,7 @@ export default function SearchInput() {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <button className="absolute right-4 top-3 text-zinc-600">
+      <button className="absolute right-4 top-3 text-zinc-600 dark:text-white">
         <BiSearch />
       </button>
     </form>
