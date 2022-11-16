@@ -16,13 +16,13 @@ function App() {
         <OpenSideNavProvider>
           <Header />
           <SideNav />
+
+          <QueryClientProvider client={client}>
+            <Outlet />
+          </QueryClientProvider>
         </OpenSideNavProvider>
-
-        <QueryClientProvider client={client}>
-          <Outlet />
-        </QueryClientProvider>
-
-				<ThemeButton />
+				
+        <ThemeButton />
       </DarkModeProvider>
     </>
   );
