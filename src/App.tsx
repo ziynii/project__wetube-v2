@@ -6,12 +6,14 @@ import SideNav from './components/SideNav';
 import { OpenSideNavProvider } from './context/OpenSideNavContext';
 import { DarkModeProvider } from './context/DarkModeContext';
 import ThemeButton from './components/ThemeButton';
+import ScrollToTop from './util/scrollToTop';
 
 const client = new QueryClient();
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <DarkModeProvider>
         <OpenSideNavProvider>
           <Header />
@@ -21,7 +23,7 @@ function App() {
             <Outlet />
           </QueryClientProvider>
         </OpenSideNavProvider>
-				
+
         <ThemeButton />
       </DarkModeProvider>
     </>
