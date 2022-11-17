@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { CgMenuLeftAlt } from 'react-icons/cg';
 import { IoPersonCircle } from 'react-icons/io5';
 import { BiSearch } from 'react-icons/bi';
@@ -12,6 +12,15 @@ import { OpenSideNavContext } from '../context/OpenSideNavContext';
 export default function Header() {
   const [openSearch, setOpenSearch] = useState(false);
   const { toggleSideNav } = useContext(OpenSideNavContext);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname.includes('watch')) {
+      setOpenSearch(false);
+    } else if (location.pathname.includes('videos/')) {
+      setOpenSearch(true);
+    }
+  }, [location]);
 
   return (
     <header className="fixed w-full flex items-center py-5 px-5 justify-between bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-600 z-50 lg:px-16">
