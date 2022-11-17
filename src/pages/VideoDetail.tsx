@@ -29,7 +29,7 @@ export default function VideoDetail() {
             className="absolute w-full h-full"
             id="player"
             datatype="text/html"
-            src={`http://www.youtube.com/embed/${video.id}`}
+            src={`https://www.youtube.com/embed/${video.id}`}
             frameBorder="0"
             title={title}
             allowFullScreen
