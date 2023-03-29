@@ -46,7 +46,7 @@ export default function Header() {
       </div>
 
       {openSearch && (
-        <div className="flex items-center absolute  w-full bg-white dark:bg-slate-800">
+        <div className="md:hidden flex items-center absolute  w-full bg-white dark:bg-slate-800">
           <button
             className="text-2xl text-zinc-600 dark:text-white"
             onClick={() => setOpenSearch(false)}
